@@ -4,7 +4,7 @@ package com.estoque;
  * Hello world!
  *
  */
-public class App 
+public class ControleEstoque 
 {
     public static void main( String[] args )
     {
