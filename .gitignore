@@ -1,3 +1,5 @@
 .vscode/
 controleestoque/target/
 test/java/com/AppTeste.java
+main\resources\application.properties
+main\resources\application-dev.properties
