@@ -3,3 +3,5 @@ controleestoque/target/
 test/java/com/AppTeste.java
 main\resources\application.properties
 main\resources\application-dev.properties
+controleestoque\src\main\resources\db\controle_estoque.sql
+controleestoque\src\main\resources\application-prod.properties
