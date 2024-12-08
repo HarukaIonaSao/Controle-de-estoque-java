@@ -1,7 +1,20 @@
 USE controle_estoque;
 
--- Tabela de Produtos
-CREATE TABLE produtos (
+-- Tabela de Categorias
+CREATE TABLE IF NOT EXISTS categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL
+);
+
+-- Tabela de Fornecedores
+CREATE TABLE IF NOT EXISTS fornecedores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    contato VARCHAR(255)
+);
+
+-- Tabela de Produto
+CREATE TABLE IF NOT EXISTS produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
     descricao VARCHAR(1000),
@@ -13,21 +26,8 @@ CREATE TABLE produtos (
     FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id)
 );
 
--- Tabela de Categorias
-CREATE TABLE categorias (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL
-);
-
--- Tabela de Fornecedores
-CREATE TABLE fornecedores (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(255) NOT NULL,
-    contato VARCHAR(255)
-);
-
 -- Tabela de Transações
-CREATE TABLE transacoes (
+CREATE TABLE IF NOT EXISTS transacoes (
     id INT AUTO_INCREMENT PRIMARY KEY,
     produto_id INT,
     tipo ENUM('entrada', 'saida') NOT NULL,
