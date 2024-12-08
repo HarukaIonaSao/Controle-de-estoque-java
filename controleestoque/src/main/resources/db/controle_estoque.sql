@@ -35,3 +35,11 @@ CREATE TABLE IF NOT EXISTS transacoes (
     data TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (produto_id) REFERENCES produtos(id)
 );
+
+CREATE TABLE IF NOT EXISTS estoque(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    produto
+    quantidade
+    quantidadeatualizada
+    data
+)
