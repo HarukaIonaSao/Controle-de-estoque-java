@@ -1,5 +1,7 @@
 package com.estoque.model;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,9 +16,12 @@ public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @Column(nullable = false)
     private String nome;
+    
+    @Column(nullable = false)
+    private String imgUrl;
 
     @Column(nullable = false)
     private String descricao;
@@ -33,19 +38,30 @@ public class Produto {
     @Column(nullable = false)
     private Integer estoque = 0;
 
-    
+    @Column(nullable = false)
+    private String lote;
+
+    @Column(nullable = false)
+    private LocalDateTime validade;
+
+
+    /*Get e Set */
+    // Getter para id
     public Long getId() {
         return id;
     }
 
+     // Setter para id
     public void setId(Long id) {
         this.id = id;
     }
 
+    // Getter para nome
     public String getNome() {
         return nome;
     }
 
+     // Setter para nome
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -98,5 +114,32 @@ public class Produto {
     // Setter para estoque
     public void setEstoque(Integer estoque) {
         this.estoque = estoque;
+    }
+
+    // Getter para validade
+    public String getValidade() {
+        return validade;
+    }
+
+     // Setter para validade
+    public void setValidade(String validade) {
+        this.validade = validade;
+    }
+    // Getter para lote
+    public String getLote() {
+        return lote;
+    }
+
+     // Setter para lote
+    public void setLote(String lote) {
+        this.lote = lote;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 }

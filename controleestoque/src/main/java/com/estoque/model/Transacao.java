@@ -12,9 +12,10 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "transação")
 public class Transacao {
+
     @Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @Column(nullable = false)
     private String tipo;
